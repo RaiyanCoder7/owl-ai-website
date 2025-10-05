@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Owl AI - Internship Program for Future AI Innovators</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">🦉 Owl AI</h1>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#internship">Internship</a></li>
+                <li><a href="#certificate">Certificate</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#contact" class="apply-btn">Apply Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Home Section with Interactive Slider -->
+    <section id="home" class="hero">
+        <div class="slider-container">
+            <div class="slider">
+                <img src="images/hero.jpg" alt="AI interns collaborating" class="slide active">
+            </div>
+            <button class="prev">&lt;</button>
+            <button class="next">&gt;</button>
+            <div class="dots">
+                <span class="dot active" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </div>
+        <div class="hero-content">
+            <h2>Unlock Your AI Potential with Owl AI Internships</h2>
+            <p>Hire as an intern, tackle 3 challenging tasks, and earn a certificate of completion. Join our wise community of innovators!</p>
+            <button class="cta-btn" onclick="scrollToSection('internship')">Explore Tasks</button>
+        </div>
+    </section>
+
+    <!-- About Section with Animated Progress Bar -->
+    <section id="about" class="about">
+        <h2>About Owl AI</h2>
+        <p>Owl AI is dedicated to nurturing the next generation of AI talent. We hire interns, provide hands-on tasks, and certify those who excel. Our program emphasizes practical skills in AI development.</p>
+        <div class="stats">
+            <div class="stat">
+                <h3>200+</h3>
+                <p>Interns Hired</p>
+                <div class="progress-bar">
+                    <div class="progress" data-target="80"></div> <!-- 80% certified -->
+                </div>
+                <p class="stat-label">Certified Interns</p>
+            </div>
+            <div class="stat">
+                <h3>3</h3>
+                <p>Core Tasks</p>
+                <div class="progress-bar">
+                    <div class="progress" data-target="100"></div>
+                </div>
+                <p class="stat-label">Tasks per Intern</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Internship Section with Interactive Task Cards -->
+    <section id="internship" class="internship">
+        <h2>Our Internship Program: 3 Tasks to Certification</h2>
+        <p>Complete all three tasks to earn your Owl AI Certificate. Each task builds real-world AI and development skills.</p>
+        <div class="task-grid">
+            <div class="task-card" onclick="toggleTask(this)">
+                <h3>Simple Task 1: Create a 3-Page PDF on Full Stack Developer Role</h3>
+                <p class="task-summary">Research what the Full Stack Developer role involves in the industry and include a Q&A section to demonstrate your understanding.</p>
+                <div class="task-details hidden">
+                    <ul>
+                        <li>Research: Cover key responsibilities (e.g., front-end/back-end integration, technologies like HTML/CSS/JS, Node.js, databases), skills required, and industry trends (e.g., agile development, cloud services).</li>
+                        <li>Structure: Page 1 - Overview; Page 2 - Skills & Tools; Page 3 - Q&A (e.g., "What is the difference between front-end and back-end?").</li>
+                        <li>Goal: Produce a professional PDF using tools like Google Docs, Canva, or Adobe Acrobat.</li>
+                        <li>Duration: 1-2 weeks.</li>
+                        <li>Checklist: <span class="check-item">Conduct research</span> <span class="check-item">Outline content</span> <span class="check-item">Create Q&A section</span> <span class="check-item">Export as PDF</span></li>
+                    </ul>
+                    <!-- PDF Upload Option -->
+                    <div class="upload-section">
+                        <input type="file" id="pdf-upload-task1" class="upload-input" accept=".pdf">
+                        <button type="button" class="submit-upload-btn" onclick="submitPdfUpload('task1')">Submit PDF</button>
+                        <div id="upload-message-task1" class="upload-message hidden"></div>
+                    </div>
+                </div>
+                <button class="expand-btn">Details</button>
+            </div>
+            <div class="task-card" onclick="toggleTask(this)">
+                <h3>Simple Task 2: Create a Basic Interactive Website for Owl AI</h3>
+                <p class="task-summary">Create a basic interactive website for Owl AI with your own creative features. Submit via GitHub or Drive.</p>
+                <div class="task-details hidden">
+                    <ul>
+                        <li>Requirements: Use HTML, CSS, and JavaScript for interactivity (e.g., sliders, forms, animations). Include sections like Home, About, and Contact.</li>
+                        <li>Creative Features: Add unique elements like dynamic progress bars or expandable cards (inspired by this very site!).</li>
+                        <li>Goal: Make it responsive and user-friendly; host on GitHub Pages for demo.</li>
+                        <li>Duration: 1-2 weeks.</li>
+                        <li>Checklist: <span class="check-item">Design layout</span> <span class="check-item">Add interactivity</span> <span class="check-item">Test responsiveness</span> <span class="check-item">Submit link</span></li>
+                    </ul>
+                    <!-- URL Upload Option -->
+                    <div class="upload-section">
+                        <input type="url" id="url-upload-task2" class="upload-input" placeholder="Paste GitHub or Google Drive link here">
+                        <button type="button" class="submit-upload-btn" onclick="submitUrlUpload('task2')">Submit Link</button>
+                        <div id="upload-message-task2" class="upload-message hidden"></div>
+                    </div>
+                </div>
+                <button class="expand-btn">Details</button>
+            </div>
+            <div class="task-card" onclick="toggleTask(this)">
+                <h3>Hard Task: Develop a Complete Web Application for Owl AI</h3>
+                <p class="task-summary">Develop a complete web application for Owl AI (or another idea) with user authentication, a database, a RESTful API, and a dynamic front-end.</p>
+                <div class="task-details hidden">
+                    <ul>
+                        <li>Features: User login/signup (e.g., JWT auth), database (e.g., MongoDB or Firebase for storing user data/tasks), RESTful API (e.g., Node.js/Express endpoints for CRUD operations), dynamic front-end (e.g., React/Vue for real-time updates).</li>
+                        <li>Idea Example: An Owl AI dashboard for interns to track task progress, submit work, and view certificates.</li>
+                        <li>Goal: Deploy to a platform like Heroku/Vercel; ensure security (e.g., hashed passwords) and scalability.</li>
+                        <li>Duration: 3-4 weeks.</li>
+                        <li>Checklist: <span class="check-item">Set up backend & auth</span> <span class="check-item">Build database & API</span> <span class="check-item">Create dynamic UI</span> <span class="check-item">Test & deploy</span></li>
+                    </ul>
+                    <!-- URL Upload Option -->
+                    <div class="upload-section">
+                        <input type="url" id="url-upload-task3" class="upload-input" placeholder="Paste GitHub or Google Drive link here">
+                        <button type="button" class="submit-upload-btn" onclick="submitUrlUpload('task3')">Submit Link</button>
+                        <div id="upload-message-task3" class="upload-message hidden"></div>
+                    </div>
+                </div>
+                <button class="expand-btn">Details</button>
+            </div>
+        </div>
+        <p class="cert-note">Complete all tasks? Get your digital certificate! 🚀</p>
+    </section>
+
+    <!-- Enhanced Sample Certificate Section -->
+<section id="certificate" class="certificate">
+    <div class="certificate-container">
+        <h2>🦉 Sample Certificate</h2>
+        <p>Earn this upon completing all tasks—your proof of AI excellence!</p>
+        
+        <div class="certificate-frame">
+            <img src="images/sample-certificate.jpg" alt="Sample Owl AI Internship Certificate" class="cert-image">
+            <div class="achievement-badge">
+                <span>Certified Intern</span>
+            </div>
+        </div>
+        
+        <div class="cert-actions">
+            <button class="download-sample-btn" onclick="downloadSampleCertificate()">
+                Download Sample
+            </button>
+            <p class="cert-note">Personalized certificates issued via email after verification.</p>
+        </div>
+    </div>
+</section>
+
+    <!-- Contact Section with Interactive Form -->
+    <section id="contact" class="contact">
+        <h2>Apply for Internship</h2>
+        <form id="contactForm">
+            <input type="text" id="name" placeholder="Your Full Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <input type="file" id="resume" accept=".pdf,.docx" placeholder="Upload Resume">
+            <textarea id="message" placeholder="Why do you want to join Owl AI? (Optional)" rows="4"></textarea>
+            <button type="submit">Submit Application</button>
+        </form>
+        <div id="formMessage" class="hidden"></div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
